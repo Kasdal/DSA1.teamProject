@@ -1,0 +1,14 @@
+<object-stream>
+  <System.MyList>
+    <head>
+      <contents class="System.Politician">
+        <fullName>Allen Terescenco</fullName>
+        <dateOfBirth>22062001</dateOfBirth>
+        <politicalParty>Inde</politicalParty>
+        <homeCounty>Waterford</homeCounty>
+        <image>www.youtube.com</image>
+      </contents>
+    </head>
+    <numElements>1</numElements>
+  </System.MyList>
+</object-stream>

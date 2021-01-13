@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane id="windows7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="841.0" prefWidth="1282.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="System.Controller">
+   <children>
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#save" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#load" text="Load" />
+              <MenuItem mnemonicParsing="false" onAction="#quit" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help" />
+        </menus>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </MenuBar>
+      <TabPane layoutX="1.0" layoutY="27.0" prefHeight="815.0" prefWidth="1282.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab id="but" fx:id="politicianTab" text="Politician">
+            <content>
+              <AnchorPane id="but" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="politicianName" layoutX="142.0" layoutY="67.0" promptText="Politician Name">
+                           <tooltip>
+                              <Tooltip text="Enter a politician name here" />
+                           </tooltip></TextField>
+                        <TextField fx:id="politicianParty" layoutX="142.0" layoutY="102.0" promptText="Political Party">
+                           <tooltip>
+                              <Tooltip text="Enter politician party " />
+                           </tooltip></TextField>
+                        <TextField fx:id="dateOfBirth" layoutX="142.0" layoutY="137.0" promptText="Date of Birth">
+                           <tooltip>
+                              <Tooltip text="Enter politician date of birth" />
+                           </tooltip></TextField>
+                         <TextField fx:id="politicianCounty" layoutX="142.0" layoutY="170.0" promptText="Home County">
+                             <tooltip>
+                                 <Tooltip text="Enter Home County of Politician" />
+                             </tooltip></TextField>
+                        <TextField fx:id="imageUrl" layoutX="142.0" layoutY="203.0" promptText="Image Url">
+                           <tooltip>
+                              <Tooltip text="Enter url of the politician image" />
+                           </tooltip></TextField>
+                        <Button layoutX="160.0" layoutY="260.0" mnemonicParsing="false" onAction="#addPolitician" prefHeight="69.0" prefWidth="113.0" text="Add Politician">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Line endX="-100.0" endY="232.0" layoutX="741.0" layoutY="84.0" startX="-100.0" startY="-83.99999237060547" />
+                        <TableView id="dark" fx:id="politicianTable" layoutY="455.0" prefHeight="325.0" prefWidth="1282.0">
+                          <columns>
+                            <TableColumn fx:id="politicianNameT" onEditCommit="#editPoliticianName" prefWidth="124.66668128967285" text="Name" />
+                            <TableColumn fx:id="politicianPartyT" onEditCommit="#editPoliticianParty" prefWidth="258.0000457763672" text="Party" />
+                              <TableColumn fx:id="dateOfBirthT" onEditCommit="#editPoliticianDOB" prefWidth="213.33328247070312" text="DOB" />
+                              <TableColumn fx:id="countyLocationT" onEditCommit="#editPoliticianCounty" prefWidth="238.666748046875" text="County" />
+                              <TableColumn fx:id="imageUrlT" onEditCommit="#editPoliticianImage" prefWidth="405.0" text="URL" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="552.0" layoutY="329.0" mnemonicParsing="false" onAction="#removePolitician" prefHeight="86.0" prefWidth="177.0" text="Remove Politician">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <ImageView fx:id="imgView" fitHeight="369.0" fitWidth="463.0" layoutX="743.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button layoutX="597.0" layoutY="429.0" mnemonicParsing="false" onAction="#showImg" text="Show image" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab id="but" fx:id="electionTab" text="Election">
+            <content>
+              <AnchorPane id="but" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="electionType" layoutX="221.0" layoutY="26.0" promptText="Election Type">
+                           <tooltip>
+                              <Tooltip text="Enter election type here" />
+                           </tooltip></TextField>
+                        <TextField fx:id="countyLocation" layoutX="221.0" layoutY="58.0" promptText="County">
+                           <tooltip>
+                              <Tooltip text="Enter the election county" />
+                           </tooltip></TextField>
+                        <TextField fx:id="yearOfElection" layoutX="221.0" layoutY="96.0" promptText="Election Year">
+                           <tooltip>
+                              <Tooltip text="Enter the election year " />
+                           </tooltip></TextField>
+                        <TextField fx:id="numberOfSeats" layoutX="221.0" layoutY="135.0" promptText="Number of Seats">
+                           <tooltip>
+                              <Tooltip text="Enter the number of seats won in the election" />
+                           </tooltip></TextField>
+                        <Button layoutX="247.0" layoutY="254.0" mnemonicParsing="false" onAction="#addElection" prefHeight="60.0" prefWidth="95.0" text="Add Election" />
+                        <TableView id="dark" fx:id="electionTable" layoutX="-14.0" layoutY="460.0" prefHeight="331.0" prefWidth="1295.0">
+                          <columns>
+                            <TableColumn fx:id="electionTypeT" onEditCommit="#editElectionName" prefWidth="311.0" text="Type" />
+                            <TableColumn fx:id="countyT" onEditCommit="#editElectionCounty" prefWidth="259.0" text="County" />
+                              <TableColumn fx:id="electionYearT" onEditCommit="#editElectionYear" prefWidth="349.0" text="Election Year" />
+                              <TableColumn fx:id="numOfSeatsT" onEditCommit="#editElectionNoS" prefWidth="301.0" text="Number of Seats" />
+                          </columns>
+                        </TableView>
+                        <Line endX="-100.0" endY="327.0" layoutX="741.0" layoutY="3.0" startX="-100.0" />
+                        <Button layoutX="552.0" layoutY="347.0" mnemonicParsing="false" onAction="#removeElection" prefHeight="86.0" prefWidth="177.0" text="Remove Election">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab id="but" fx:id="candidateTab" text="Candidate">
+              <content>
+                <AnchorPane id="but" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="267.0" layoutY="294.0" mnemonicParsing="false" onAction="#addCandidate" prefHeight="60.0" prefWidth="166.0" text="Add Candidate" />
+                        <TextField fx:id="numberOfVotes" layoutX="274.0" layoutY="217.0" prefHeight="26.0" prefWidth="151.0" promptText="Number of votes:">
+                           <tooltip>
+                              <Tooltip text="Enter number of votes won by the candidate" />
+                           </tooltip></TextField>
+                        <TableView id="dark" fx:id="candidateTable" layoutY="394.0" prefHeight="392.0" prefWidth="1282.0">
+                          <columns>
+                              <TableColumn fx:id="candidateT" prefWidth="344.0" text="Candidate" />
+                            <TableColumn fx:id="electionT" prefWidth="408.0" text="Election" />
+                            <TableColumn fx:id="numberOfVotesT" prefWidth="510.0" text="Number of Votes" />
+                          </columns>
+                        </TableView>
+                        <Line endX="-2.0" endY="127.0" layoutX="643.0" layoutY="149.0" startX="-2.0" startY="-163.0" />
+                        <ChoiceBox fx:id="electionList" accessibleHelp="asd" accessibleText="xzc" layoutX="152.0" layoutY="36.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="politicianList" layoutX="401.0" layoutY="36.0" prefWidth="150.0" />
+                        <Label layoutX="186.0" layoutY="14.0" text="Select Election" />
+                        <Label layoutX="432.0" layoutY="14.0" text="Select Politician" />
+                        <Button layoutX="552.0" layoutY="294.0" mnemonicParsing="false" onAction="#removeCandidate" prefHeight="86.0" prefWidth="177.0" text="Remove Candidate">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab id="but" fx:id="searchTabPol" text="Search">
+              <content>
+                <AnchorPane id="but" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Line endX="-100.0" endY="291.0" layoutX="741.0" layoutY="82.0" startX="-100.0" startY="-84.0" />
+                        <Text layoutX="262.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Politician" wrappingWidth="257.6044921875">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="903.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Election">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="232.0" layoutY="286.0" mnemonicParsing="false" onAction="#searchForPolitician" prefHeight="63.0" prefWidth="170.0" text="Search" />
+                        <Button layoutX="861.0" layoutY="286.0" mnemonicParsing="false" onAction="#searchForElection" prefHeight="63.0" prefWidth="170.0" text="Search" />
+                        <TextField fx:id="searchPolTab" layoutX="243.0" layoutY="102.0" />
+                        <TextField fx:id="searchElecTab" layoutX="871.0" layoutY="102.0" />
+                        <TableView id="dark" fx:id="searchElecT" layoutX="659.0" layoutY="391.0" prefHeight="392.0" prefWidth="573.0">
+                           <columns>
+                              <TableColumn fx:id="sTypeT" prefWidth="144.0" text="Type" />
+                              <TableColumn fx:id="sLocationT" prefWidth="173.0" text="County" />
+                              <TableColumn fx:id="sYearT" prefWidth="99.0" text="Election Year" />
+                              <TableColumn fx:id="sNOST" prefWidth="118.0" text="Number of Seats" />
+                           </columns>
+                        </TableView>
+                        <TableView id="dark" fx:id="searchPolT" layoutX="52.0" layoutY="391.0" prefHeight="392.0" prefWidth="573.0">
+                           <columns>
+                              <TableColumn fx:id="sNameT" prefWidth="148.0" text="Name" />
+                              <TableColumn fx:id="sPartyT" prefWidth="122.0" text="Party" />
+                              <TableColumn fx:id="sDOBT" prefWidth="93.0" text="DOB" />
+                              <TableColumn fx:id="sCountyT" prefWidth="167.0" text="County" />
+                           </columns>
+                        </TableView>
+                        <RadioButton fx:id="searchByParty" layoutX="285.0" layoutY="196.0" mnemonicParsing="false" text="Party">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="polGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="searchByName" layoutX="284.0" layoutY="161.0" mnemonicParsing="false" text="Name" toggleGroup="$polGroup" />
+                        <RadioButton fx:id="searchByHCounty" layoutX="285.0" layoutY="231.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="66.0" text="County" toggleGroup="$polGroup" />
+                        <RadioButton fx:id="searchByType" layoutX="912.0" layoutY="161.0" mnemonicParsing="false" text="Type">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="elecGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="searchByYear" layoutX="912.0" layoutY="196.0" mnemonicParsing="false" text="Year" toggleGroup="$elecGroup" />
+                        <RadioButton fx:id="searchByCounty" layoutX="912.0" layoutY="231.0" mnemonicParsing="false" text="County" toggleGroup="$elecGroup" />
+                        <Group />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Line endX="100.0" startX="-100.0" />
+   </children>
+</Pane>
